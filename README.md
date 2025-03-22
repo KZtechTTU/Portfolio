@@ -100,4 +100,4 @@ This template is open-source and free to use for personal and professional proje
 
 ---
 
-Feel free to modify this template to match your personal or professiona
+Feel free to modify this template to match your personal or professional
