@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ user_name }} - Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="image-popup" id="imagePopup">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <img id="popupImg" class="popup-content">
+    </div>
+    <header>
+        <div class="hero">
+            <img src="{{ user_image }}" alt="Profile Picture" class="profile-pic" onclick="openPopup(this)">
+            <h1>{{ user_name }}</h1>
+            <h2>{{ user_title }}</h2>
+            <div class="social-links">
+                <a href="{{ linkedin_url }}" target="_blank">LinkedIn</a>
+                <a href="{{ github_url }}" target="_blank">GitHub</a>
+                <a href="mailto:{{ email }}">Email</a>
+            </div>
+        </div>
+    </header>
+    <section id="about">
+        <h2 onclick="toggleSection('about-content')">About Me</h2>
+        <div id="about-content" class="content">
+            <p>{{ about_me }}</p>
+        </div>
+    </section>
+    <section id="experience">
+        <h2 onclick="toggleSection('experience-content')">Work Experience</h2>
+        <div id="experience-content" class="content">
+            {% for job in experience %}
+            <div class="experience-item">
+                <h3 class="experience-title">{{ job.company }}</h3>
+                <p class="experience-duration"><strong>{{ job.location }}</strong> <span class="job-title">{{ job.position }}</span> ({{ job.duration }})</p>
+                <ul>
+                    {% for responsibility in job.responsibilities %}
+                    <li>{{ responsibility }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section id="projects">
+        <h2 onclick="toggleSection('projects-content')">Projects</h2>
+        <div id="projects-content" class="content">
+            {% for project in projects %}
+            <div class="project-item">
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section id="contact">
+        <h2 onclick="toggleSection('contact-content')">Contact</h2>
+        <div id="contact-content" class="content">
+            <p>Email: {{ email }}</p>
+            <p>Phone: {{ phone }}</p>
+        </div>
+    </section>
+</body>
+</html>
