@@ -106,4 +106,4 @@ Feel free to modify this template to match your personal or professional
 
 Here’s how the portfolio will look:
 
-![Portfolio Screenshot](static/image/example.jpg.png)
+![example](https://github.com/user-attachments/assets/a02dad8c-4a21-4387-b6f9-93b6351918ea)
