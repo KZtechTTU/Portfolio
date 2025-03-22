@@ -101,3 +101,9 @@ This template is open-source and free to use for personal and professional proje
 ---
 
 Feel free to modify this template to match your personal or professional
+
+## Preview
+
+Here’s how the portfolio will look:
+
+![Portfolio Screenshot](static/image/example.jpg.png)
